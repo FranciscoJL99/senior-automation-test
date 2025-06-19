@@ -1,0 +1,14 @@
+userName: javierleon_fFubH8
+accessKey: 1RkCQnqsBAt9sxUXCSos
+framework: testng
+app: bs://010e8a2caa60e0029fe36194953b7b3235ed8b85
+platforms:
+  - platformName: android
+    deviceName: Samsung Galaxy S22 Ultra
+    platformVersion: 12.0
+browserstackLocal: falase
+buildName: bstack-demo
+projectName: BrowserStack Sample
+CUSTOM_TAG_1: "You can set a custom Build Tag here"
+debug: true
+networkLogs: true

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="1" failures="0" name="Swag Labs app" skipped="0" tests="1" time="8.77" timestamp="2025-06-18 09:56:51"><testcase name=": Seleccion de producto"><error message="The of() method is not supported for By-type Targets" type="java.lang.UnsupportedOperationException">The of() method is not supported for By-type Targets</error><system-err>The of() method is not supported for By-type Targets
+com.consubanco.qa.stepdefinitions.mobileswaglabs.MobilesSwagLabsStepDefinitions.elCarritoDebeTenerElProductoAgregado(MobilesSwagLabsStepDefinitions.java:57)
+✽.el carrito debe tener el producto "Camisa Sauce Labs Bolt" agregado(file:///Users/Francisco/Documents/Propios/senior-automation-test/src/test/resources/features/mobileswaglabs/MobileSwageLabs.feature:29)
+</system-err></testcase></testsuite>

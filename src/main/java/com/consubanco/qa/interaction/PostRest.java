@@ -21,7 +21,7 @@ public class PostRest implements Interaction {
                 Post.to(endpoint)
                         .with(req -> req
                                 .header("Content-Type", "application/json")
-                                .header("Accept", "*/*")
+                                .header("Accept", "application/json")
                                 .body(requestBody))
         );
         System.out.println("POST Response: " + SerenityRest.lastResponse().asString());

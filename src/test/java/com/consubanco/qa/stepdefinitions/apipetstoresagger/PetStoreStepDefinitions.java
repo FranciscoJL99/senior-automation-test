@@ -4,12 +4,10 @@ import com.consubanco.qa.interaction.DeleteRest;
 import com.consubanco.qa.interaction.GetRest;
 import com.consubanco.qa.interaction.PostRest;
 import com.consubanco.qa.interaction.PutRest;
-import com.consubanco.qa.questions.Status;
 import com.consubanco.qa.utils.ConstructorJson;
 import io.cucumber.java.Before;
 import io.cucumber.java.es.*;
 import net.serenitybdd.rest.SerenityRest;
-import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
@@ -24,7 +22,7 @@ public class PetStoreStepDefinitions {
     int petId = ConstructorJson.generarIdNumerico();
     @Before
     public void before() throws IOException {
-        OnStage.setTheStage(OnlineCast.whereEveryoneCan(CallAnApi.at("https://petstore.swagger.io")));
+        OnStage.setTheStage(OnlineCast.whereEveryoneCan(CallAnApi.at("https://petstore.swagger.io/v2")));
         SerenityRest.useRelaxedHTTPSValidation();
         OnStage.theActorCalled("Usuario");
     }
@@ -91,7 +89,7 @@ public class PetStoreStepDefinitions {
     public void laMascotaDebeSerConsultadaCorrectamente(io.cucumber.datatable.DataTable dataTable) {
         int statusEsperado = Integer.parseInt(dataTable.cell(1, 0));
         theActorInTheSpotlight().should(
-                seeThatResponse("Validar status del PUT",
+                seeThatResponse("Validar status",
                         response -> response.statusCode(statusEsperado))
         );
     }
@@ -103,14 +101,6 @@ public class PetStoreStepDefinitions {
         );
     }
 
-    @Entonces("la mascota debe ser consultada correctamente en la API")
-    public void laMascotaEliminadaDebeResponderConCodigo(io.cucumber.datatable.DataTable dataTable) {
-        int statusEsperado = Integer.parseInt(dataTable.cell(1, 0));
-        theActorInTheSpotlight().should(
-                seeThatResponse("Validar status del DELETE",
-                        response -> response.statusCode(statusEsperado))
-        );
-    }
 
 
 
